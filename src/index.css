@@ -16,13 +16,13 @@
         @apply font-sans text-slate-200 bg-slate-700 border-solid border-2 border-slate-200 rounded-xl p-2 text-3xl;
     }
 
-    button:hover {
+    button:hover, button:focus {
         @apply text-slate-100 bg-slate-800;
     }
 
     .calculator-grid {
         @apply grid grid-cols-4 grid-rows-layout gap-2
-        m-8;
+        m-8 sm:mx-12 md:mx-24 lg:mx-36 xl:mx-48 2xl:mx-60;
     }
 
 }
