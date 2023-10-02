@@ -58,11 +58,14 @@ const reducer = (state, { type, payload }) => {
         }
       }
 
-      if (payload.digit === "0" && state.currentOperand === "0") {
-        return state;
+      if (state.currentOperand === undefined) {
+        return {
+          ...state,
+          currentOperand: payload.digit
+        }
       }
 
-      if (payload.digit === '.' && state.currentOperand.includes(".")) {
+      if (payload.digit === "." && state.currentOperand.includes(".")) {
         return state;
       }
 
@@ -92,7 +95,7 @@ const reducer = (state, { type, payload }) => {
           operation: payload.operation
         }
       }
-      
+
       return {
         ...state,
         previousOperand: evaluate(state),
